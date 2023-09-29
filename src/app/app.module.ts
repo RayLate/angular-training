@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
@@ -11,6 +10,7 @@ import { ReceipeListComponent } from './receipes/receipe-list/receipe-list.compo
 import { ReceipeItemComponent } from './receipes/receipe-item/receipe-item.component';
 import { ReceipeDetailComponent } from './receipes/receipe-detail/receipe-detail.component';
 import { HeaderComponent } from './header/header.component';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
     ReceipeItemComponent,
     ReceipeDetailComponent,
     HeaderComponent,
+    DropdownDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

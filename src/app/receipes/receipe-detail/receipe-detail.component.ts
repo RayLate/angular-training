@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Receipe } from './../recipe.model';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-receipe-detail',
   templateUrl: './receipe-detail.component.html',
-  styleUrls: ['./receipe-detail.component.css']
+  styleUrls: ['./receipe-detail.component.css'],
 })
 export class ReceipeDetailComponent implements OnInit {
+  @Input() receipe!: Receipe;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

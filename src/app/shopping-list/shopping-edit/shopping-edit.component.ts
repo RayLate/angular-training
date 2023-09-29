@@ -17,6 +17,7 @@ export class ShoppingEditComponent implements OnInit {
   ngOnInit(): void {}
 
   onAddIngredient() {
+  
     this.ingredientAdded.emit({
       ingredientName: this.ingredientName,
       ingredientNumber: this.ingredientNumber,

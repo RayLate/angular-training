@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Receipe } from '../recipe.model';
 
 @Component({
@@ -19,7 +19,12 @@ export class ReceipeListComponent implements OnInit {
       'https://images.squarespace-cdn.com/content/v1/598785e8f9a61e3bd68fb96f/1675118379526-FEEAL3NLEX1Z5CHAASOP/chicken-with-currants-olives-and-herbs.png?format=1000w'
     ),
   ];
+  @Output() selectReceipeEvent = new EventEmitter<Receipe>();
+
   constructor() {}
 
   ngOnInit(): void {}
+  onReceipeSelect(receipe: Receipe) {
+    this.selectReceipeEvent.emit(receipe);
+  }
 }

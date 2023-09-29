@@ -10,6 +10,7 @@
       href="#"
       class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
       *ngFor="let r of receipes"
+      (click)="onReceipeSelect(r)"
     >
       <app-receipe-item [receipe]="r"></app-receipe-item>
     </a>
