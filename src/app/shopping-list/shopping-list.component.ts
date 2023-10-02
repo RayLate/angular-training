@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Ingredient } from '../shared/ingredients.model';
+import { ShoppingListService } from './shopping-list.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -7,23 +8,15 @@ import { Ingredient } from '../shared/ingredients.model';
   styleUrls: ['./shopping-list.component.css'],
 })
 export class ShoppingListComponent implements OnInit {
-  ingredients: Ingredient[] = [
-    new Ingredient('Apple', 2),
-    new Ingredient('Pearl', 5),
-  ];
-  constructor() {}
+  ingredients: Ingredient[] = [];
+  constructor(private shoppingListService: ShoppingListService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ingredients = this.shoppingListService.getIngredients();
 
-  onIngredientAdded(eventData: {
-    ingredientName: string;
-    ingredientNumber: number;
-  }) {
-    // This function will be called when the event is emitted
-    console.log('Received event data:', eventData);
-    this.ingredients.push(
-      new Ingredient(eventData.ingredientName, eventData.ingredientNumber)
+    // on init, subscibe to service 
+    this.shoppingListService.IngredientChanged.subscribe(
+      () => (this.ingredients = this.shoppingListService.getIngredients())
     );
-    // You can do further processing with the received data here
   }
 }
