@@ -28,8 +28,12 @@
             >To Shopping List</a
           >
         </li>
-        <li><a ngbDropdownItem href="#">Edit Recipe</a></li>
-        <li><a ngbDropdownItem href="#">Delete Recipe</a></li>
+        <li>
+          <a ngbDropdownItem style="cursor: pointer" (click)="onEditRecipe()"
+            >Edit Recipe</a
+          >
+        </li>
+        <li><a ngbDropdownItem style="cursor: pointer">Delete Recipe</a></li>
       </ul>
     </div>
   </div>

@@ -9,6 +9,7 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
+      1,
       'Spaghetti Carbonara',
       'A classic Roman pasta dish with creamy sauce and crispy bacon.',
       'https://cdn-rdb.arla.com/Files/puckarabia-en/2467521664/a8adc6bf-52a6-4428-ae42-5a59697a226c.jpg?w=1230&h=670&mode=crop&ak=aee88f72&hm=5f828870',
@@ -21,6 +22,7 @@ export class RecipeService {
       ]
     ),
     new Recipe(
+      2,
       'Burger',
       'A very tasty burger',
       'https://natashaskitchen.com/wp-content/uploads/2023/06/Cheeseburger-3.jpg',
@@ -32,6 +34,7 @@ export class RecipeService {
       ]
     ),
     new Recipe(
+      3,
       'Caprese Salad',
       'A refreshing salad with tomatoes, mozzarella, and fresh basil.',
       'https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2019/07/Caprese-Salad-2-2.jpg',
@@ -44,6 +47,7 @@ export class RecipeService {
       ]
     ),
     new Recipe(
+      4,
       'Chicken Stir-Fry',
       'A quick and flavorful stir-fry with tender chicken and colorful vegetables.',
       'https://www.saltandlavender.com/wp-content/uploads/2022/03/chicken-stir-fry-1-720x1080.jpg',
@@ -63,7 +67,14 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
+  getRecipe(id: number): Recipe {
+    const recipe = this.recipes.find((r) => {
+      return id === r.id;
+    })!;
+    return recipe;
+  }
+
   addIngredientToShoppingList(i: Ingredient[]) {
-    this.slService.addIngredients(i)
+    this.slService.addIngredients(i);
   }
 }

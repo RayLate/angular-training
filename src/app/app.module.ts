@@ -13,6 +13,10 @@ import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CollapseDirective } from './shared/collapse.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { RecipeResolver } from './recipes/recipe-detail/recipe-resolver.service';
+import { RecipeService } from './recipes/recipe.service';
+import { SelectRecipeComponent } from './recipes/select-recipe/select-recipe.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +29,11 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     RecipeDetailComponent,
     HeaderComponent,
     CollapseDirective,
+    SelectRecipeComponent,
+    RecipeEditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, RecipeResolver, RecipeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

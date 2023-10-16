@@ -1,7 +1,8 @@
 <a
-  href="#"
   class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-  (click)="onSelected()"
+  [routerLink]="[recipe.id]"
+  style="cursor: pointer"
+  routerLinkActive="active"
 >
   <div class="ms-2 me-2" style="height: 100px; max-width: 400px">
     <h4 class="mb-1">{{ recipe.name }}</h4>
